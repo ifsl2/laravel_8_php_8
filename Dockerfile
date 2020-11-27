@@ -7,11 +7,10 @@ RUN docker-php-ext-install mysqli pdo mbstring
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# TROCAR A PASTA DO BACKEND AQUI
-WORKDIR /backend 
+WORKDIR /app 
 
 # TROCAR A PASTA DO BACKEND AQUI
-COPY ./backend /backend
+COPY ./backend /app
 
 RUN composer install
 
