@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    laravel_8_php_8:
+        container_name: 'laravel_8_php_8'
+        # PARA TROCAR A PORTA NO SEU COMPUTADOR É SÓ TROCAR A PORTA 8001 PARA SUA PREFERENCIA
+        ports:
+          - 8001:8000
+        build:
+            context: ./
+            dockerfile: Dockerfile
