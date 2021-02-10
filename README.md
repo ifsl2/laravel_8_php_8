@@ -33,6 +33,16 @@ Por padrão a pasta do projeto em Laravel deve ser clonada dentro do repositóri
 ```sh
 COPY ./PASTA_DO_PROJETO_NO_SEU_COMPUTADOR /app
 ```
+Adicione as lib's externas em Dockerfile(linha 4):
+
+```sh
+RUN apt-get update -y && apt-get install -y libonig-dev libmcrypt-dev openssl zip unzip git zlib1g-dev libzip-dev libpng-dev
+```
+Adicione as dependências em Dockerfile(linha 6):
+
+```sh
+RUN docker-php-ext-install mysqli pdo mbstring gd zip
+```
 
 Para rodar o projeto basta subir o projeto, usando o comando abaixo:
 
